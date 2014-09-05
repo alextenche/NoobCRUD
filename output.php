@@ -13,6 +13,7 @@
 	
 	while($row = mysqli_fetch_array($result)){
 		echo $row['name'] . " " . $row['email'] . " " . $row['password'] ;
+		echo "<br>";
 	}
 		
 	mysqli_close($link);

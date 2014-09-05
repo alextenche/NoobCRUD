@@ -12,13 +12,13 @@ echo "<tr><td width=\"40%\" align=center bgcolor=\"FFFF00\">ID</td>
 
 while($row = mysqli_fetch_assoc($result)) {
 
-	$id=$row['id'];
-	$name=$row['name'];
-	$email=$row['email'];
-	$password=$row['password'];
+	$id = $row['id'];
+	$name = $row['name'];
+	$email = $row['email'];
+	$password = $row['password'];
 	
 echo "<tr><td align=center>
-<a href=\"edit.php?ids=$first&names=$second&emails=$third&passwords=$fourth\">$id</a></td>
+<a href=\"edit.php?ids=$id&names=$name&emails=$email&passwords=$password\">$id</a></td>
 <td>$name</td><td><a href=\"emailto.php?emails=$email\">$email</a></td><td>$password</td></tr>";	
 	
 } echo "</table>";
