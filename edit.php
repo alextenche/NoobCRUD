@@ -30,3 +30,5 @@
     </form>
 </body>
 </html>
+
+<?php include('links.php'); ?>

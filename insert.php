@@ -19,4 +19,5 @@
 	echo "$registered was inserted";
 	
 	mysqli_close($link);
+	include('links.php');
 ?>

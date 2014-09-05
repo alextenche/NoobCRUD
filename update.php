@@ -25,4 +25,5 @@ echo "<tr><td align=center>
 
 	
 mysqli_close($link);
+include('links.php');
 ?>
