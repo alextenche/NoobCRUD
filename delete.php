@@ -1,9 +1,8 @@
 
-<h3>Choose an ID to edit</h3>
+<h3>Choose an ID to delete</h3>
 <br>
 
 <?php
-
 $link = mysqli_connect("localhost", "root", "termopane", "testsite")or die("problem with connection...");
 
 $result = mysqli_query($link, "SELECT * FROM users");
@@ -22,7 +21,7 @@ while($row = mysqli_fetch_assoc($result)) {
 	$password = $row['password'];
 	
 echo "<tr><td align=center>
-<a href=\"edit.php?ids=$id&names=$name&emails=$email&passwords=$password\">$id</a></td>
+<a href=\"delete1.php?ids=$id&names=$name&emails=$email&passwords=$password\">$id</a></td>
 <td>$name</td><td><a href=\"emailto.php?emails=$email\">$email</a></td><td>$password</td></tr>";	
 	
 } echo "</table>";
