@@ -13,19 +13,19 @@
         <table border="0" width="60%">
 			<tr>
 				<td width="10%">Name:</td>
-				<td><input type="text" name="name"/></td>
+				<td><input type="text" name="name" maxlength="15"/></td>
             </tr>
 			<tr>
 				<td width="10%">Email:</td>
-				<td><input type="text" name="email"/></td>
+				<td><input type="text" name="email" maxlength="30"/></td>
 			</tr>
 			<tr>
 				<td  width="10%">Password: </td>
-				<td><input type="password" name="password"/><td>
+				<td><input type="password" name="password" maxlength="15"/><td>
 			</tr>
 			<tr>
 				<td  width="10%">Confirm Password: </td>
-				<td><input type="password" name="cpassword"/></td>
+				<td><input type="password" name="cpassword" maxlength="15"/></td>
 			</tr>
 		</table>
         <p>
