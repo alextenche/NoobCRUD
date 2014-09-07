@@ -21,13 +21,21 @@ while($query_row = mysqli_fetch_assoc($query)){
 	echo $query_row['name'].'<br>';
 }
 
+$prev = $page - 1;
+$next = $page + 1;
+
+if(!($page <= 1)){
+	echo "<a href='pagination.php?page=$prev'>Prev</a> ";
+}
+
 if($pages >= 1){
 	for($x=1; $x <= $pages; $x++){
-		echo '<a href="?page='.$x.'">'.$x.'</a> ';
-		
-		
+		echo ($x == $page) ? '<b><a href="?page='.$x.'">'.$x.'</a></b> ' : '<a href="?page='.$x.'">'.$x.'</a> ';	
 	}
+}
 
+if(!($page >= $pages)){
+	echo "<a href='pagination.php?page=$next'>Next</a> ";
 }
 
 ?>
