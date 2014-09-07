@@ -6,6 +6,15 @@
 
 $link = mysqli_connect("localhost", "root", "termopane", "testsite")or die("problem with connection...");
 
+$per_page = 6;
+$pages_query = mysqli_query($link, "SELECT COUNT('id') FROM users");
+$pages = ceil(mysqli_result($pages_query, 0) / $per_page);
+
+$page = (isset($_GET['page'])) ? (int)$_GET['page'] : 1;
+$start = ($page - 1) * $per_page;
+$query = mysqli_query($link, "SELECT name FROM users LIMIT $start, $per_page");
+
+
 $result = mysqli_query($link, "SELECT * FROM users");
 
 echo "<table width=\"90%\" align=center border=2>";

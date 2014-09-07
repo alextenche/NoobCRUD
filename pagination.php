@@ -9,7 +9,6 @@ function mysqli_result($res, $row, $field=0) {
 $link = mysqli_connect("localhost", "root", "termopane", "testsite")or die("problem with connection...");
 
 $per_page = 6;
-
 $pages_query = mysqli_query($link, "SELECT COUNT('id') FROM users");
 $pages = ceil(mysqli_result($pages_query, 0) / $per_page);
 
