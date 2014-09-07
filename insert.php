@@ -33,7 +33,7 @@ if($name && $email && $password && $cpassword){
 	} else {
 		echo "Your passwords don't match";
 	}
-	} else {echo "Yur password is too short! You need to type a password betwen 4 and 15 characters";}
+	} else {echo "Your password is too short! You need to type a password betwen 4 and 15 characters";}
 } else {
 	echo "you have to complete the form!";
 }
