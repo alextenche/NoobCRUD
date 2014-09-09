@@ -30,12 +30,12 @@ if($name && $email && $password && $cpassword){
 					if( $count != 0 ){
 						echo "This name is already registered! Please type another name.";
 					} else {
-						if(($type == "image/jpeg") || ($type == "image/jpg") || ($type == "image/bmp")){
+						if(true){  //($type == "image/jpeg") || ($type == "image/jpg") || ($type == "image/bmp")
 							move_uploaded_file($temp, "images/$mypic");
 							echo"What a pretty face!<p><img border='1' width='70' height='70' src='images/$mypic'/><p>";
 							$passwordmd5 = md5($password);
 							mysqli_query($link,"INSERT INTO users (name,email,password) VALUES ('$name','$email','$passwordmd5')");
-							echo "You have succesfully registred";
+							echo "You have succesfully registred!<a href='home.php'>Login now</a>";
 						} else { 
 							echo "This file has to be jpeg, jpg or bmp";
 						}

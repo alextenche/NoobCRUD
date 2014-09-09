@@ -33,13 +33,20 @@ while($row = mysqli_fetch_assoc($query)) {
 	$id = $row['id'];
 	$name = $row['name'];
 	$email = $row['email'];
-	$password = $row['password'];
+	$password = $row['password']; ?>
 	
-echo "<tr><td align=center>
-<a href=\"edit.php?ids=$id&names=$name&emails=$email&passwords=$password\">$id</a></td>
-<td>$name</td><td><a href=\"emailto.php?emails=$email\">$email</a></td><td>$password</td></tr>";	
+	<tr>
+		<td align=center>
+			<a href="edit.php?ids=<?php echo $id;?>&names=<?php echo $name;?>&emails=<?php echo $email;?>&passwords=<?php echo $password;?>"><?php echo $id; ?></a>
+		</td>
+		<td><?php echo $name; ?></td>
+		<td>
+			<a href="emailto.php?emails=<?php echo $email; ?>"><?php echo $email; ?></a>
+		</td>
+		<td><?php echo $password; ?></td>
+	</tr>	
 	
-} echo "</table>";
+<?php } echo "</table>";
 
 $prev = $page - 1;
 $next = $page + 1;
