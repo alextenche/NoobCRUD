@@ -16,6 +16,10 @@
 	<u>Results:</u>&nbsp;
 	
 	<?php
+	session_start();
+	if(!isset($_SESSION)){
+		echo "Access denied!";
+	} else {
 	
 	if(isset($_REQUEST['submit'])){
 		
@@ -67,6 +71,7 @@
 	
 	
 	include('links.php');
+	}
 	?>
 	
 	

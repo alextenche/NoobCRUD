@@ -8,6 +8,11 @@ function mysqli_result($res, $row, $field=0) {
 	$datarow = $res->fetch_array();
 	return $datarow[$field];
 }
+session_start();
+	if(!isset($_SESSION)){
+		echo "Access denied!";
+	} else {
+
 
 $link = mysqli_connect("localhost", "root", "termopane", "testsite")or die("problem with connection...");
 
@@ -62,4 +67,5 @@ if(!($page >= $pages)){
 	
 mysqli_close($link);
 include('links.php');
+}
 ?>
