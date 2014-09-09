@@ -27,7 +27,8 @@ if($name && $email && $password && $cpassword){
 					if( $count != 0 ){
 						echo "This name is already registered! Please type another name.";
 					} else {
-						mysqli_query($link,"INSERT INTO users (name,email,password) VALUES ('$name','$email','$password')");
+						$passwordmd5 = md5($password);
+						mysqli_query($link,"INSERT INTO users (name,email,password) VALUES ('$name','$email','$passwordmd5')");
 						echo "You have succesfully registred";
 					}
 				}

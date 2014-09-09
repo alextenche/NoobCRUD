@@ -1,6 +1,6 @@
 <?php
 $name = $_POST['name'];
-$password = $_POST['password'];
+$password = md5($_POST['password']);
 
 if($name && $password){
 	$link = mysqli_connect("localhost","root","termopane","testsite");
