@@ -1,11 +1,10 @@
-<html>
-<head>
-</head>
-<body>
-	Welcome to the control center!
-	<center>
-	<hr>
-	<?php include("links.php")?>
-	</center>
-</body>
-</html>
+<?php 
+session_start();
+
+if(!isset($_SESSION['name'])){
+	echo "Access Denided!";
+	exit;
+} else {
+	echo "<b>" . $_SESSION['name'] . "</b>" . "'s session<br><a href='logout.php'>Logout</a>";
+	include("links.php");
+}?>
