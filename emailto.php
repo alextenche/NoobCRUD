@@ -17,6 +17,20 @@
 </form>
 
 <?php
-
+if(isset($_REQUEST['submit'])){
+	$to = $_REQUEST['to'];
+	$subject = $_REQUEST['subject'];
+	$body = $_REQUEST['message'];
+	$from = "admin@tutorials.com";
+	$headers = "From: $from";
+	
+	if($to && $subject && $body){
+		mail($to,$subject,$body,$headers);
+		echo "Your email has been sent!";
+		header("Refresh:3; url=update.php");
+	} else {
+		echo "Please fill up all fields!";
+	}
+}
 
 ?>
