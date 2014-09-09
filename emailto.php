@@ -15,3 +15,8 @@
 	</table>
 	<p><input type="submit" name="submit" value="send email"/><p>
 </form>
+
+<?php
+
+
+?>
