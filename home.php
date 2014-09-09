@@ -8,7 +8,7 @@
 <body>
 	<h1><center>Welcome to CRUD control center</center></h1>
     <center>Please login...
-	<form method="post" action="insert.php">
+	<form method="post" action="login.php">
         <table border="0" width="10%">
 			<tr>
 				<td width="10%">Name:</td>
@@ -23,6 +23,7 @@
 			<input type="submit" value="login"/>
 		</p>
     </form>
+	<a href="form.php">Register?</a>
 	</center>
 
 </body>
