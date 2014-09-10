@@ -1,4 +1,4 @@
-
+<?php include("session.php")?>
 <h3>Choose an ID to delete</h3>
 <br>
 
@@ -13,7 +13,6 @@ session_start();
 if(!isset($_SESSION['name'])){
 	echo "Access denied!";
 } else {
-	session_start();
 	$link = mysqli_connect("localhost", "root", "termopane", "testsite")or die("problem with connection...");
 
 	$per_page = 6;
