@@ -6,9 +6,10 @@ function mysqli_result($res, $row, $field=0) {
 }
 
 session_start();
-if(!isset($_SESSION)){
+if(!isset($_SESSION['name'])){
 	echo "Access denied!";
 } else {
+	include("session.php");
 	echo "<h3>Choose an ID to edit</h3><br>";
 
 	$link = mysqli_connect("localhost", "root", "termopane", "testsite")or die("problem with connection...");

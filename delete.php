@@ -8,30 +8,28 @@ function mysqli_result($res, $row, $field=0) {
 	$datarow = $res->fetch_array();
 	return $datarow[$field];
 }
+
 session_start();
-	if(!isset($_SESSION)){
-		echo "Access denied!";
-	} else {
+if(!isset($_SESSION['name'])){
+	echo "Access denied!";
+} else {
+	session_start();
+	$link = mysqli_connect("localhost", "root", "termopane", "testsite")or die("problem with connection...");
 
+	$per_page = 6;
+	$pages_query = mysqli_query($link, "SELECT COUNT('id') FROM users");
+	$pages = ceil(mysqli_result($pages_query, 0) / $per_page);
 
-$link = mysqli_connect("localhost", "root", "termopane", "testsite")or die("problem with connection...");
+	$page = (isset($_GET['page'])) ? (int)$_GET['page'] : 1;
+	$start = ($page - 1) * $per_page;
 
-$per_page = 6;
-$pages_query = mysqli_query($link, "SELECT COUNT('id') FROM users");
-$pages = ceil(mysqli_result($pages_query, 0) / $per_page);
+	$query = mysqli_query($link, "SELECT * FROM users LIMIT $start, $per_page");
 
-$page = (isset($_GET['page'])) ? (int)$_GET['page'] : 1;
-$start = ($page - 1) * $per_page;
-
-$query = mysqli_query($link, "SELECT * FROM users LIMIT $start, $per_page");
-
-
-
-echo "<table width=\"90%\" align=center border=2>";
-echo "<tr><td width=\"40%\" align=center bgcolor=\"FFFF00\">ID</td>
-<td width=\"40%\" align=center bgcolor=\"FFFF00\">NAME</td>
-<td width=\"40%\" align=center bgcolor=\"FFFF00\">EMAIL</td>
-<td width=\"40%\" align=center bgcolor=\"FFFF00\">PASSWORD</td></tr>";
+	echo "<table width=\"90%\" align=center border=2>";
+	echo "<tr><td width=\"40%\" align=center bgcolor=\"FFFF00\">ID</td>
+	<td width=\"40%\" align=center bgcolor=\"FFFF00\">NAME</td>
+	<td width=\"40%\" align=center bgcolor=\"FFFF00\">EMAIL</td>
+	<td width=\"40%\" align=center bgcolor=\"FFFF00\">PASSWORD</td></tr>";
 
 while($row = mysqli_fetch_assoc($query)) {
 

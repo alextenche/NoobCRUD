@@ -1,3 +1,7 @@
+<?php 
+session_start();
+include("session.php");
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -16,8 +20,7 @@
 	<u>Results:</u>&nbsp;
 	
 	<?php
-	session_start();
-	if(!isset($_SESSION)){
+	if(!isset($_SESSION['name'])){
 		echo "Access denied!";
 	} else {
 	
