@@ -1,4 +1,6 @@
-<?php include("session.php")?>
+<?php 
+session_start();
+include("session.php")?>
 <h3>Choose an ID to delete</h3>
 <br>
 
@@ -9,7 +11,6 @@ function mysqli_result($res, $row, $field=0) {
 	return $datarow[$field];
 }
 
-session_start();
 if(!isset($_SESSION['name'])){
 	echo "Access denied!";
 } else {

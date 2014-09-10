@@ -1,16 +1,21 @@
 <?php
-$id = $_REQUEST['id'];
-$newname = $_REQUEST['newname'];
-$newemail = $_REQUEST['newemail'];
-$newpassword = md5($_REQUEST['newpassword']);
+session_start();
 
-$link = mysqli_connect("localhost","root","termopane","testsite");
+if(isset($_POST['submit'])){
 
-mysqli_query($link, "UPDATE users SET name='$newname', email='$newemail', password='$newpassword'
-			  WHERE id = '$id'");
+	$id = $_REQUEST['id'];
+	$newname = $_REQUEST['newname'];
+	$newemail = $_REQUEST['newemail'];
+	$newpassword = md5($_REQUEST['newpassword']);
+
+	$link = mysqli_connect("localhost","root","termopane","testsite");
+
+	mysqli_query($link, "UPDATE users SET name='$newname', email='$newemail', password='$newpassword' WHERE id = '$id'");
 			  
-echo "Your values have been updated successfuly!";
-mysqli_close($link);
+	echo "Your values have been updated successfuly!";
+	mysqli_close($link);
 
-include('links.php');
+} else {
+	echo "Not allowed";
+}
 ?>
