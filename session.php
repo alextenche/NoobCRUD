@@ -2,6 +2,7 @@
 $time = time();
 $date = date('d F, Y, g: i: s a');
 echo "Today is ".$date;
+echo "<br>";
 
 if(!isset($_SESSION['name'])){
 	echo "not a session";
