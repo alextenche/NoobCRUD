@@ -27,8 +27,8 @@ if(isset($_COOKIE['testsite'])){
 					<td><input type='password' name='password' maxlength='15'/><td>
 				</tr>
 				<tr>
-					<td>Password: </td>
-					<td><input type='password' name='password' maxlength='15'/><td>
+					<td>Remember me? : </td>
+					<td><input type='checkbox' name='remember'/><td>
 				</tr>
 			</table>
 			<p>
@@ -42,5 +42,4 @@ if(isset($_COOKIE['testsite'])){
 </body>
 </html>
 
-}
-?>
+";}?>
