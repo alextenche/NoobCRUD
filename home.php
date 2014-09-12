@@ -35,7 +35,7 @@ if(isset($_COOKIE['testsite'])){
 				<input type='submit' value='login'/>
 			</p>
 			</form>
-		<a href="form.php">Register?</a>
+		<a href='form.php'>Register?</a>
 	</div>
 
 
