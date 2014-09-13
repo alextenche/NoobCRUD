@@ -64,6 +64,5 @@ if(!($page >= $pages)){
 
 	
 mysqli_close($link);
-include('links.php');
 }
 ?>

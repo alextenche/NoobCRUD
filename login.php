@@ -19,11 +19,11 @@ if($_POST){
 			if($_SESSION['name'] == $dbname){
 				if($_SESSION['password'] == $dbpassword){
 				
-					if($_POST['remember']) == 'on'{
+					if($_POST['remember'] == 'on'){
 						$expire = time() + 86400;
 						setcookie('testsite', $_POST['name'], $expire);
 					}
-					header("location: enter.php");
+					header("location:enter.php");
 					
 				} else {
 					echo "Your password is incorrect!";

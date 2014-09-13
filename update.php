@@ -72,6 +72,5 @@ if(!isset($_SESSION['name'])){
 	echo"</center>";
 		
 	mysqli_close($link);
-	include('links.php');
 }
 ?>

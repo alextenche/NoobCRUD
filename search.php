@@ -67,13 +67,7 @@ include("session.php");
 		echo "Please type any word for serch.";
 	}
 	
-	
-	
-	
-	
-	
-	
-	include('links.php');
+
 	}
 	?>
 	
