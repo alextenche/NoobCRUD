@@ -35,11 +35,19 @@ if(!isset($_SESSION['name'])){
 		$id = $row['id'];
 		$name = $row['name'];
 		$email = $row['email'];
-		$password = $row['password']; ?>
+		$password = $row['password'];
+
+		$first = base64_encode($id);
+		$second = base64_encode($name);
+		$third = base64_encode($email);
+		$fourth = base64_encode($password);
+
+
+		?>
 		
 		<tr>
 			<td align=center>
-				<a href="edit.php?ids=<?php echo $id;?>&names=<?php echo $name;?>&emails=<?php echo $email;?>&passwords=<?php echo $password;?>"><?php echo $id; ?></a>
+				<a href="edit.php?ids=<?php echo $first;?>&names=<?php echo $second;?>&emails=<?php echo $third;?>&passwords=<?php echo $fourth;?>"><?php echo $id; ?></a>
 			</td>
 			<td><?php echo $name; ?></td>
 			<td>
