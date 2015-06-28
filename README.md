@@ -1,4 +1,0 @@
-NoobCRUD
-========
-
-basic CRUD
