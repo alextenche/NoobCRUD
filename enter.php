@@ -6,3 +6,6 @@ if(isset($_SESSION['name']) || isset($_COOKIE['testsite'])){
 } else {
 	echo "not allowed";
 }?>
+
+
+change !!!!
